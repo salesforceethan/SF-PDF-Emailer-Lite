@@ -1,0 +1,37 @@
+<apex:page
+    standardController="Case"
+    extensions="RecordPDFController"
+    showHeader="false"
+    sidebar="false"
+    standardStylesheets="false"
+    renderAs="pdf">
+  <html>
+    <head>
+      <meta charset="utf-8"/>
+      <style>
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; }
+        h1 { font-size: 18px; margin-bottom: 8px; }
+        h2.section { font-size: 14px; margin-top: 12px; margin-bottom: 6px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        .field { margin-bottom: 6px; }
+        .label { font-weight: bold; display:inline-block; width: 200px; vertical-align: top; }
+        .value { display:inline-block; max-width: 420px; word-wrap: break-word; }
+        .container { padding: 20px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Record: {!AccountName}</h1>
+
+        <apex:repeat value="{!sections}" var="sec">
+          <h2 class="section">{!sec.Label}</h2>
+          <apex:repeat value="{!sec.Items}" var="f">
+            <div class="field">
+              <span class="label">{!f.Label}:</span>
+              <span class="value">{!f.Value}</span>
+            </div>
+          </apex:repeat>
+        </apex:repeat>
+      </div>
+    </body>
+  </html>
+</apex:page>

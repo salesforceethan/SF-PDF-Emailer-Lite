@@ -1,0 +1,5 @@
+<apex:page standardController="Account" renderAs="pdf" showHeader="false">
+  <h1>Test PDF</h1>
+  <div>Account Id: {!Account.Id}</div>
+  <div>Account Name: {!Account.Name}</div>
+</apex:page>

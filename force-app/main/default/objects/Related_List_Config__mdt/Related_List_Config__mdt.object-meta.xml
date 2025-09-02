@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Related_List_Config__mdt</fullName>
+  <label>Related List Config</label>
+  <pluralLabel>Related List Configs</pluralLabel>
+  <visibility>Public</visibility>
+  <description>Controls which related lists appear in the PDF and which columns to show.</description>
+
+  <fields>
+    <fullName>Include__c</fullName>
+    <label>Include</label>
+    <type>Checkbox</type>
+    <defaultValue>true</defaultValue>
+  </fields>
+
+  <fields>
+    <fullName>Parent_Object_API_Name__c</fullName>
+    <label>Parent Object API Name</label>
+    <type>Text</type>
+    <length>80</length>
+    <required>true</required>
+  </fields>
+
+  <fields>
+    <fullName>Child_Object_API_Name__c</fullName>
+    <label>Child Object API Name</label>
+    <type>Text</type>
+    <length>80</length>
+    <required>true</required>
+  </fields>
+
+  <fields>
+    <fullName>Parent_Lookup_Field__c</fullName>
+    <label>Parent Lookup Field API Name (on Child)</label>
+    <type>Text</type>
+    <length>80</length>
+    <required>true</required>
+  </fields>
+
+  <fields>
+    <fullName>Section_Label__c</fullName>
+    <label>Section Label</label>
+    <type>Text</type>
+    <length>120</length>
+  </fields>
+
+  <fields>
+    <fullName>Sort_Order__c</fullName>
+    <label>Sort Order</label>
+    <type>Number</type>
+    <precision>6</precision>
+    <scale>0</scale>
+  </fields>
+
+  <fields>
+    <fullName>Columns__c</fullName>
+    <label>Columns (comma-separated field API names)</label>
+    <type>LongTextArea</type>
+    <length>1000</length>
+    <visibleLines>3</visibleLines>
+    <required>true</required>
+  </fields>
+
+  <fields>
+    <fullName>Where_Clause__c</fullName>
+    <label>Additional WHERE (no 'WHERE' keyword)</label>
+    <type>LongTextArea</type>
+    <length>1000</length>
+    <visibleLines>3</visibleLines>
+  </fields>
+
+  <fields>
+    <fullName>Order_By__c</fullName>
+    <label>ORDER BY (e.g., CloseDate DESC, Name ASC)</label>
+    <type>Text</type>
+    <length>255</length>
+  </fields>
+
+  <fields>
+    <fullName>Limit__c</fullName>
+    <label>Row Limit</label>
+    <type>Number</type>
+    <precision>6</precision>
+    <scale>0</scale>
+    <defaultValue>200</defaultValue>
+  </fields>
+</CustomObject>

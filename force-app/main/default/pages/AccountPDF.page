@@ -1,0 +1,30 @@
+<apex:page
+    standardController="Account"
+    extensions="AccountPDFController"
+    renderAs="pdf"
+    showHeader="false"
+    applyHtmlTag="false"
+    applyBodyTag="false"
+>
+  <html>
+    <head>
+      <style>
+        /* later: add SLDS or custom PDF styles */
+      </style>
+    </head>
+    <body>
+      <!-- Example: you can still show the record’s Id if needed -->
+      <div style="display:none">
+        <apex:outputText value="{!Account.Id}" />
+      </div>
+
+      <h1>Account: {!Account.Name}</h1>
+
+      <apex:repeat value="{!fields}" var="fld">
+        <div>
+          <strong>{!fld.Label}:</strong> {!fld.Value}
+        </div>
+      </apex:repeat>
+    </body>
+  </html>
+</apex:page>
