@@ -1,4 +1,3 @@
-# salesforce-pdf-emailer-lite
 
 # PDF Emailer Lite for Salesforce
 
