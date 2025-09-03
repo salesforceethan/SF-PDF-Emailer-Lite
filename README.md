@@ -1,6 +1,5 @@
 # salesforce-pdf-emailer-lite
 
-
 # PDF Emailer Lite for Salesforce
 
 Generate and email PDFs from **Account, Contact, Case, Opportunity** with a simple Flow UI.  
@@ -10,7 +9,7 @@ Logs activities automatically, supports Org-Wide Email, and includes a 20MB atta
 
 ## 🚀 Install
 
-[![Install in Production](https://img.shields.io/badge/Install-Production-blue)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04ta500000AhlAn)
+[![Install in Production](https://img.shields.io/badge/Install-Production-blue)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04ta500000AhlAn)  
 [![Install in Sandbox](https://img.shields.io/badge/Install-Sandbox-orange)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04ta500000AhlAn)
 
 > After install, assign the **PDF_Emailer_Lite_Permissions** permission set and add the two **Quick Actions** (Print PDF, Email PDF) to layouts for Account, Contact, Case, Opportunity.
@@ -27,20 +26,38 @@ Logs activities automatically, supports Org-Wide Email, and includes a 20MB atta
 
 ---
 
-## 📚 Admin Guide
-See the full guide here: https://developer.salesforce.com/docs/atlas.en-us.salesforce1appadmin.meta/salesforce1appadmin/salesforce1_admin_guide_intro.htm
+## 📚 Admin Setup Guide
 
-- Install & setup steps
-- Org-Wide Email + DKIM recommendations
-- How to add **PDF Field Config** CMDT records to control which fields/sections appear
+### 1. Permission Set
+Assign **PDF_Emailer_Lite_Permissions** to users who need access.
+
+### 2. Quick Actions
+- Go to Object Manager → (Account/Contact/Case/Opportunity)  
+- Edit Page Layouts → add **Print PDF** and **Email PDF** actions  
+
+### 3. Org-Wide Email (optional, recommended)
+- Setup → Org-Wide Email Addresses  
+- Add & verify a shared email (e.g. support@company.com)  
+- The package automatically uses it if available  
+
+### 4. Custom Metadata (optional)
+- Setup → Custom Metadata Types → *PDF Email Template* or *Related List Config*  
+- Add records to control:  
+  - Default subjects/bodies  
+  - Which fields/related lists appear on PDFs  
+- Example: Add a record with `Object_API_Name = Account` and set subject to *"Account Summary for {Account.Name}"*  
 
 ---
 
 ## 🧪 Testing
-Works in any sandbox. Comes with Apex tests for core logic.
+- Works in any sandbox  
+- Comes with Apex tests for core logic  
 
 ---
+▶️ Video Walkthrough
 
+📺 Coming soon: YouTube Setup Guide
+
+---
 ## 📝 License
 MIT
-
